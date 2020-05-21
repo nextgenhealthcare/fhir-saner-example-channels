@@ -1,0 +1,188 @@
+{
+    "resourceType": "MeasureReport",
+    "meta": {
+      "profile": [
+        "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+      ]
+    },
+    "text": {
+      "status": "generated",
+      "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated from CSV record(s):</b></p><pre>4/20/20,,,,,,,,,\nData Element,New Diagnostic Tests Ordered/Received,Cumulative Diagnostic Tests Ordered/Recieved ,New Tests Resulted,Cumulative Specimens Rejected*,Cumulative Tests Performed,New Positive COVID-19 Tests,Cumulative Positive COVID-19 Tests,Percent Positive among Newly Resulted Tests,Cumulative Percent Positive among Resulted Tests\nDefinition,\"Midnight to midnight cutoff, tests ordered on previous date queried\",All tests ordered to date.,\"Midnight to midnight cutoff, test results released on previous date queried\",All specimens rejected for testing to date,All tests with results released to date,\"Midnight to midnight cutoff, positive test results released on previous date queried\",All positive test results released to date,# of new positive test results released / # of total new tests released for previous date queried,# of total positive results to released date / # of total tests results released to date\nPA,\" 10,000 \",\" 55,000 \",\" 5,600 \", 777 ,\" 47,987 \",\" 1,796 \",\" 22,018 \",8.2%,40.0%\nAllegheney,\" 1,200 \",\" 7,789 \", 900 , 22 ,\" 6,986 \", 134 ,\" 2,500 \",5.4%,32.1%\n</pre><table style=\"padding: 10px; border: 1px solid black; border-collapse: collapse;\"><tr><th>4/20/20</th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th></tr><tr><th>Data Element</th><th>New Diagnostic Tests Ordered/Received</th><th>Cumulative Diagnostic Tests Ordered/Recieved </th><th>New Tests Resulted</th><th>Cumulative Specimens Rejected*</th><th>Cumulative Tests Performed</th><th>New Positive COVID-19 Tests</th><th>Cumulative Positive COVID-19 Tests</th><th>Percent Positive among Newly Resulted Tests</th><th>Cumulative Percent Positive among Resulted Tests</th></tr><tr><th>Definition</th><th>Midnight to midnight cutoff, tests ordered on previous date queried</th><th>All tests ordered to date.</th><th>Midnight to midnight cutoff, test results released on previous date queried</th><th>All specimens rejected for testing to date</th><th>All tests with results released to date</th><th>Midnight to midnight cutoff, positive test results released on previous date queried</th><th>All positive test results released to date</th><th># of new positive test results released / # of total new tests released for previous date queried</th><th># of total positive results to released date / # of total tests results released to date</th></tr><tr><td>PA</td><td>10,000</td><td>55,000</td><td>5,600</td><td>777</td><td>47,987</td><td>1,796</td><td>22,018</td><td>8.2%</td><td>40.0%</td></tr><tr><td>Allegheney</td><td>1,200</td><td>7,789</td><td>900</td><td>22</td><td>6,986</td><td>134</td><td>2,500</td><td>5.4%</td><td>32.1%</td></tr></table></div>"
+    },
+    "status": "complete",
+    "type": "summary",
+    "measure": "http://hl7.org/fhir/us/saner/Measure/FEMADailyHospitalCOVID19Reporting",
+    "subject": {
+      "reference": "Location/states-NJ",
+      "identifier": {
+        "system": "https://www.census.gov/geographies",
+        "value": "34"
+      },
+      "display": "State of New Jersey"
+    },
+    "date": "2020-04-20",
+    "reporter": {
+      "reference": "Organization/NJ-DPH",
+      "display": "New Jersey Department of Public Health"
+    },
+    "period": {
+      "start": "2020-04-20",
+      "end": "2020-04-20"
+    },
+    "group": [
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+              "code": "positiveIncreasePercent",
+              "display": "Percent Positive among Newly Resulted Tests"
+            }
+          ],
+          "text": "# of new positive test results released / # of total new tests released for previous date queried"
+        },
+        "population": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                  "code": "totalOrdersIncrease",
+                  "display": "New Diagnostic Tests Ordered/Received"
+                },
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                  "code": "initial-population",
+                  "display": "Initial Population"
+                }
+              ],
+              "text": "Midnight to midnight cutoff, tests ordered on previous date queried"
+            },
+            "count": 10000
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                  "code": "totalTestResultsIncrease",
+                  "display": "New Tests Resulted"
+                },
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                  "code": "denominator",
+                  "display": "Denominator"
+                }
+              ],
+              "text": "Midnight to midnight cutoff, test results released on previous date queried"
+            },
+            "count": 5600
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                  "code": "positiveIncrease",
+                  "display": "New Positive COVID-19 Tests"
+                },
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                  "code": "numerator",
+                  "display": "Numerator"
+                }
+              ],
+              "text": "Midnight to midnight cutoff, positive test results released on previous date queried"
+            },
+            "count": 1796
+          }
+        ]
+      },
+      {
+        "code": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+              "code": "positivePercent",
+              "display": "Cumulative Percent Positive among Resulted Tests"
+            }
+          ],
+          "text": "# of total positive results to released date / # of total tests results released to date"
+        },
+        "population": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                  "code": "totalOrders",
+                  "display": "Cumulative Diagnostic Tests Ordered/Received"
+                },
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                  "code": "initial-population",
+                  "display": "Initial Population"
+                }
+              ],
+              "text": "All tests ordered to date."
+            },
+            "count": 55000
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                  "code": "rejected",
+                  "display": "Cumulative Specimens Rejected"
+                },
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                  "code": "denominator-exclusion",
+                  "display": "Denominator Exclusion"
+                }
+              ],
+              "text": "All specimens rejected for testing to date"
+            },
+            "count": 777
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                  "code": "totalTestResults",
+                  "display": "Cumulative Tests Performed"
+                },
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                  "code": "denominator",
+                  "display": "Denominator"
+                }
+              ],
+              "text": "All tests with results released to date"
+            },
+            "count": 47987
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                  "code": "positive",
+                  "display": "Cumulative Positive COVID-19 Tests"
+                },
+                {
+                  "system": "http://terminology.hl7.org/CodeSystem/measure-population",
+                  "code": "numerator",
+                  "display": "Numerator"
+                }
+              ],
+              "text": "All positive test results released to date"
+            },
+            "count": 22018
+          }
+        ]
+      }
+    ]
+  }
