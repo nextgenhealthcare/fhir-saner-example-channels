@@ -1,15 +1,14 @@
 <codeTemplateLibrary version="3.9.0">
   <id>a084db27-49e0-4c67-893b-ffcc9f1d6e94</id>
   <name>FHIR Helper Functions</name>
-  <revision>59</revision>
+  <revision>3</revision>
   <lastModified>
-    <time>1590084596209</time>
+    <time>1592856056107</time>
     <timezone>UTC</timezone>
   </lastModified>
   <description>Other common helper functions used by the FHIR Listener channel.</description>
   <includeNewChannels>false</includeNewChannels>
   <enabledChannelIds>
-    <string>1892f241-d643-4abb-b0af-b20b87e0cf12</string>
     <string>11b8bb4e-6a05-481c-ad7e-e2026c062daa</string>
     <string>b7ea555f-67e8-4380-8d67-ddbca4db628e</string>
     <string>6ee5452f-792a-4f77-aada-4bca1de14b07</string>
@@ -28,6 +27,7 @@
     <string>6978b08f-7b35-419c-806c-40ab88352adc</string>
     <string>96ed09ab-0af2-4414-85e0-61629d76085b</string>
     <string>f2075620-e011-4280-bbd2-33986a15313a</string>
+    <string>a25c03d6-3b28-495b-a3ed-0015c923e19f</string>
   </enabledChannelIds>
   <disabledChannelIds>
     <string>2f7e3c54-1320-4ed1-9d75-a9af7d7e99da</string>
@@ -43,18 +43,18 @@
     <codeTemplate version="3.9.0">
       <id>d8e6f7a5-aeec-4025-a6d2-e568eb48e647</id>
       <name>Convert Date</name>
-      <revision>8</revision>
+      <revision>1</revision>
       <lastModified>
-        <time>1589562950880</time>
+        <time>1592591182168</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -134,18 +134,18 @@ function convertDate(date, outpattern) {
       <name>Create FHIR OperationOutcome</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247743</time>
+        <time>1592591182327</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>CHANNEL_POSTPROCESSOR</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
           <contextType>CHANNEL_ATTACHMENT</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>CHANNEL_POSTPROCESSOR</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -216,18 +216,18 @@ function createOperationOutcome(severity, code, details, fhirVersion, httpStatus
       <name>Get Prefer Header Value</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247611</time>
+        <time>1592591182213</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>CHANNEL_POSTPROCESSOR</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
           <contextType>CHANNEL_ATTACHMENT</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>CHANNEL_POSTPROCESSOR</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -259,18 +259,18 @@ function getPreferValue() {
       <name>Import Common Packages</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247418</time>
+        <time>1592591182039</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>CHANNEL_POSTPROCESSOR</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
           <contextType>CHANNEL_ATTACHMENT</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>CHANNEL_POSTPROCESSOR</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -291,16 +291,16 @@ importPackage(org.apache.commons.lang3.math);</code>
       <name>Update Resource Meta</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247520</time>
+        <time>1592591182144</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">

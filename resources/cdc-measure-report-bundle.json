@@ -1,554 +1,1482 @@
 {
-    "resourceType" : "Bundle",
-    "type" : "collection",
-    "entry" : [
-      {
-        "resource" : {
-          "resourceType" : "MeasureReport",
-          "meta" : {
-            "profile" : [
-              "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+  "resourceType" : "Bundle",
+  "type" : "collection",
+  "entry" : [
+    {
+      "resource" : {
+        "resourceType" : "MeasureReport",
+        "meta" : {
+          "profile" : [
+            "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated from CSV record(s):</b></p><pre>collectionDate,numTotBeds,numbeds,numBedsOcc,numICUBeds,numNICUBeds,numICUBedsOcc,numNICUBedsOcc,numVent,numVentUse,numC19HospPats,numConfC19HospPats,numC19MechVentPats,numConfC19MechVentPats,numC19HOPats,numConfC19HOPats,numC19OverflowPats,numConfC19OverflowPats,numC19OFMechVentPats,numConfC19OFMechVentPats,numC19Died ,numc19confnewadm,numc19suspnewadm,numc19honewpats,numConfC19HONewPats,numc19prevdied ,numConfC19PrevDied,numC19ICUPats,numConfC19ICUPats\n5/28/2020,150,125,100,20,4,15,1,40,15,25,5,5,5,0,0,0,0,0,0,1,1,8,0,0,2,2,5,5\n</pre><table><tr><th>collectionDate</th><th>numTotBeds</th><th>numbeds</th><th>numBedsOcc</th><th>numICUBeds</th><th>numNICUBeds</th><th>numICUBedsOcc</th><th>numNICUBedsOcc</th><th>numVent</th><th>numVentUse</th><th>numC19HospPats</th><th>numConfC19HospPats</th><th>numC19MechVentPats</th><th>numConfC19MechVentPats</th><th>numC19HOPats</th><th>numConfC19HOPats</th><th>numC19OverflowPats</th><th>numConfC19OverflowPats</th><th>numC19OFMechVentPats</th><th>numConfC19OFMechVentPats</th><th>numC19Died </th><th>numc19confnewadm</th><th>numc19suspnewadm</th><th>numc19honewpats</th><th>numConfC19HONewPats</th><th>numc19prevdied </th><th>numConfC19PrevDied</th><th>numC19ICUPats</th><th>numConfC19ICUPats</th></tr><tr><td>5/28/2020</td><td>150</td><td>125</td><td>100</td><td>20</td><td>4</td><td>15</td><td>1</td><td>40</td><td>15</td><td>25</td><td>5</td><td>5</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>8</td><td>0</td><td>0</td><td>2</td><td>2</td><td>5</td><td>5</td></tr></table></div>"
+        },
+        "status" : "complete",
+        "type" : "summary",
+        "measure" : "http://hl7.org/fhir/us/saner/Measure/CDCPatientImpactAndHospitalCapacity",
+        "subject" : {
+          "reference" : "Location/states-NJ",
+          "identifier" : {
+            "system" : "https://www.census.gov/geographies",
+            "value" : "34"
+          },
+          "display" : "State of New Jersey"
+        },
+        "date" : "2020-05-28",
+        "reporter" : {
+          "reference" : "Organization/NJ-DPH",
+          "display" : "New Jersey Department of Public Health"
+        },
+        "period" : {
+          "start" : "2020-05-28",
+          "end" : "2020-05-28"
+        },
+        "group" : [
+          {
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+                  "code" : "Beds"
+                }
+              ]
+            },
+            "population" : [
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numTotBeds"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "initial-population"
+                    }
+                  ]
+                },
+                "count" : 150
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numbeds"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 125
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numBedsOcc"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 100
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numICUBeds"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 20
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numNICUBeds"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 4
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numICUBedsOcc"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 15
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numNICUBedsOcc"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 1
+              }
             ]
           },
-          "text" : {
-            "status" : "generated",
-            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated from CSV record(s):</b></p><pre>collectiondate,numTotBeds,numbeds,numBedsOcc,numICUBeds,numICUBedsOcc,numVent,numVentUse,numC19HospPats,numC19MechVentPats,numC19HOPats,numC19OverflowPats,numC19OFMechVentPats,numC19Died\n3/9/2020,,100,50,100,25,50,35,50,20,5,3,2,8\n</pre><table><tr><th>collectiondate</th><th>numTotBeds</th><th>numbeds</th><th>numBedsOcc</th><th>numICUBeds</th><th>numICUBedsOcc</th><th>numVent</th><th>numVentUse</th><th>numC19HospPats</th><th>numC19MechVentPats</th><th>numC19HOPats</th><th>numC19OverflowPats</th><th>numC19OFMechVentPats</th><th>numC19Died</th></tr><tr><td>3/9/2020</td><td></td><td>100</td><td>50</td><td>100</td><td>25</td><td>50</td><td>35</td><td>50</td><td>20</td><td>5</td><td>3</td><td>2</td><td>8</td></tr></table></div>"
-          },
-          "status" : "complete",
-          "type" : "summary",
-          "measure" : "http://hl7.org/fhir/us/saner/Measure/CDCPatientImpactAndHospitalCapacity",
-          "subject" : {
-            "reference" : "Location/states-NJ",
-            "identifier" : {
-              "system" : "https://www.census.gov/geographies",
-              "value" : "34"
-            },
-            "display" : "State of New Jersey"
-          },
-          "date" : "2020-03-09",
-          "reporter" : {
-            "reference" : "Organization/NJ-DPH",
-            "display" : "New Jersey Department of Public Health"
-          },
-          "period" : {
-            "start" : "2020-03-09",
-            "end" : "2020-03-09"
-          },
-          "group" : [
-            {
-              "code" : {
-                "coding" : [
-                  {
-                    "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
-                    "code" : "Beds"
-                  }
-                ]
-              },
-              "population" : [
+          {
+            "code" : {
+              "coding" : [
                 {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numTotBeds"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "initial-population"
-                      }
-                    ]
-                  },
-                  "_count" : {
-                    "extension" : [
-                      {
-                        "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-                        "valueCode" : "unsupported"
-                      }
-                    ]
-                  }
-                },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numBeds"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 100
-                },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numBedsOcc"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 50
-                },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numICUBeds"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 100
-                },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numICUBedsOcc"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 25
+                  "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+                  "code" : "Ventilators"
                 }
               ]
             },
-            {
-              "code" : {
-                "coding" : [
-                  {
-                    "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
-                    "code" : "Ventilators"
-                  }
-                ]
+            "population" : [
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numVent"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "initial-population"
+                    }
+                  ]
+                },
+                "count" : 40
               },
-              "population" : [
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numVent"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "initial-population"
-                      }
-                    ]
-                  },
-                  "count" : 50
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numVentUse"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
                 },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numVentUse"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 35
-                }
-              ]
-            },
-            {
-              "code" : {
-                "coding" : [
-                  {
-                    "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
-                    "code" : "Encounters"
-                  }
-                ]
-              },
-              "population" : [
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numC19HospPats"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 50
-                },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numC19MechVentPats"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 20
-                },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numC19HOPats"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 5
-                },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numC19OverflowPats"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 3
-                },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numC19OFMechVentPats"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 2
-                },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numC19Died"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 8
-                }
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "resource" : {
-          "resourceType" : "MeasureReport",
-          "meta" : {
-            "profile" : [
-              "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+                "count" : 15
+              }
             ]
           },
-          "text" : {
-            "status" : "generated",
-            "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated from CSV record(s):</b></p><pre>collectiondate,numTotBeds,numbeds,numBedsOcc,numICUBeds,numICUBedsOcc,numVent,numVentUse,numC19HospPats,numC19MechVentPats,numC19HOPats,numC19OverflowPats,numC19OFMechVentPats,numC19Died\n3/10/2020,200,100,60,100,20,50,35,75,20,5,3,2,\n</pre><table><tr><th>collectiondate</th><th>numTotBeds</th><th>numbeds</th><th>numBedsOcc</th><th>numICUBeds</th><th>numICUBedsOcc</th><th>numVent</th><th>numVentUse</th><th>numC19HospPats</th><th>numC19MechVentPats</th><th>numC19HOPats</th><th>numC19OverflowPats</th><th>numC19OFMechVentPats</th><th>numC19Died</th></tr><tr><td>3/10/2020</td><td>200</td><td>100</td><td>60</td><td>100</td><td>20</td><td>50</td><td>35</td><td>75</td><td>20</td><td>5</td><td>3</td><td>2</td><td></td></tr></table></div>"
-          },
-          "status" : "complete",
-          "type" : "summary",
-          "measure" : "http://hl7.org/fhir/us/saner/Measure/CDCPatientImpactAndHospitalCapacity",
-          "subject" : {
-            "reference" : "Location/states-NJ",
-            "identifier" : {
-              "system" : "https://www.census.gov/geographies",
-              "value" : "34"
-            },
-            "display" : "State of New Jersey"
-          },
-          "date" : "2020-03-10",
-          "reporter" : {
-            "reference" : "Organization/NJ-DPH",
-            "display" : "New Jersey Department of Public Health"
-          },
-          "period" : {
-            "start" : "2020-03-10",
-            "end" : "2020-03-10"
-          },
-          "group" : [
-            {
-              "code" : {
-                "coding" : [
-                  {
-                    "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
-                    "code" : "Beds"
-                  }
-                ]
-              },
-              "population" : [
+          {
+            "code" : {
+              "coding" : [
                 {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numTotBeds"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "initial-population"
-                      }
-                    ]
-                  },
-                  "count" : 200
-                },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numBeds"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 100
-                },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numBedsOcc"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 60
-                },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numICUBeds"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 100
-                },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numICUBedsOcc"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 20
+                  "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+                  "code" : "Encounters"
                 }
               ]
             },
-            {
-              "code" : {
-                "coding" : [
-                  {
-                    "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
-                    "code" : "Ventilators"
-                  }
-                ]
+            "population" : [
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19HospPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 25
               },
-              "population" : [
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numVent"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "initial-population"
-                      }
-                    ]
-                  },
-                  "count" : 50
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19HospPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
                 },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numVentUse"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 35
-                }
-              ]
-            },
-            {
-              "code" : {
-                "coding" : [
-                  {
-                    "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
-                    "code" : "Encounters"
-                  }
-                ]
+                "count" : 5
               },
-              "population" : [
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numC19HospPats"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 75
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19MechVentPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
                 },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numC19MechVentPats"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 20
+                "count" : 5
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19MechVentPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
                 },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numC19HOPats"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 5
+                "count" : 5
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19HOPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
                 },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numC19OverflowPats"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 3
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19HOPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
                 },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numC19OFMechVentPats"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "count" : 2
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19OverflowPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
                 },
-                {
-                  "code" : {
-                    "coding" : [
-                      {
-                        "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
-                        "code" : "numC19Died"
-                      },
-                      {
-                        "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
-                        "code" : "measure-population"
-                      }
-                    ]
-                  },
-                  "_count" : {
-                    "extension" : [
-                      {
-                        "url" : "http://hl7.org/fhir/StructureDefinition/data-absent-reason",
-                        "valueCode" : "unsupported"
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          ]
-        }
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19OverflowPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19OFMechVentPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19OFMechVentPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19Died"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 1
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numc19confnewadm"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 1
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numc19suspnewadm"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 8
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numc19honewpats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19HONewPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numc19prevdied"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 2
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19PrevDied"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 2
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19ICUPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 5
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19ICUPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 5
+              }
+            ]
+          }
+        ]
       }
-    ]
-  }
+    },
+    {
+      "resource" : {
+        "resourceType" : "MeasureReport",
+        "meta" : {
+          "profile" : [
+            "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated from CSV record(s):</b></p><pre>collectionDate,numTotBeds,numbeds,numBedsOcc,numICUBeds,numNICUBeds,numICUBedsOcc,numNICUBedsOcc,numVent,numVentUse,numC19HospPats,numConfC19HospPats,numC19MechVentPats,numConfC19MechVentPats,numC19HOPats,numConfC19HOPats,numC19OverflowPats,numConfC19OverflowPats,numC19OFMechVentPats,numConfC19OFMechVentPats,numC19Died ,numc19confnewadm,numc19suspnewadm,numc19honewpats,numConfC19HONewPats,numc19prevdied ,numConfC19PrevDied,numC19ICUPats,numConfC19ICUPats\n5/29/2020,150,125,100,20,4,15,1,40,15,25,5,5,5,0,0,0,0,0,0,1,1,8,0,0,2,2,5,5\n</pre><table><tr><th>collectionDate</th><th>numTotBeds</th><th>numbeds</th><th>numBedsOcc</th><th>numICUBeds</th><th>numNICUBeds</th><th>numICUBedsOcc</th><th>numNICUBedsOcc</th><th>numVent</th><th>numVentUse</th><th>numC19HospPats</th><th>numConfC19HospPats</th><th>numC19MechVentPats</th><th>numConfC19MechVentPats</th><th>numC19HOPats</th><th>numConfC19HOPats</th><th>numC19OverflowPats</th><th>numConfC19OverflowPats</th><th>numC19OFMechVentPats</th><th>numConfC19OFMechVentPats</th><th>numC19Died </th><th>numc19confnewadm</th><th>numc19suspnewadm</th><th>numc19honewpats</th><th>numConfC19HONewPats</th><th>numc19prevdied </th><th>numConfC19PrevDied</th><th>numC19ICUPats</th><th>numConfC19ICUPats</th></tr><tr><td>5/29/2020</td><td>150</td><td>125</td><td>100</td><td>20</td><td>4</td><td>15</td><td>1</td><td>40</td><td>15</td><td>25</td><td>5</td><td>5</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>8</td><td>0</td><td>0</td><td>2</td><td>2</td><td>5</td><td>5</td></tr></table></div>"
+        },
+        "status" : "complete",
+        "type" : "summary",
+        "measure" : "http://hl7.org/fhir/us/saner/Measure/CDCPatientImpactAndHospitalCapacity",
+        "subject" : {
+          "reference" : "Location/states-NJ",
+          "identifier" : {
+            "system" : "https://www.census.gov/geographies",
+            "value" : "34"
+          },
+          "display" : "State of New Jersey"
+        },
+        "date" : "2020-05-29",
+        "reporter" : {
+          "reference" : "Organization/NJ-DPH",
+          "display" : "New Jersey Department of Public Health"
+        },
+        "period" : {
+          "start" : "2020-05-29",
+          "end" : "2020-05-29"
+        },
+        "group" : [
+          {
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+                  "code" : "Beds"
+                }
+              ]
+            },
+            "population" : [
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numTotBeds"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "initial-population"
+                    }
+                  ]
+                },
+                "count" : 150
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numbeds"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 125
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numBedsOcc"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 100
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numICUBeds"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 20
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numNICUBeds"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 4
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numICUBedsOcc"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 15
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numNICUBedsOcc"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 1
+              }
+            ]
+          },
+          {
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+                  "code" : "Ventilators"
+                }
+              ]
+            },
+            "population" : [
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numVent"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "initial-population"
+                    }
+                  ]
+                },
+                "count" : 40
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numVentUse"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 15
+              }
+            ]
+          },
+          {
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+                  "code" : "Encounters"
+                }
+              ]
+            },
+            "population" : [
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19HospPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 25
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19HospPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 5
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19MechVentPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 5
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19MechVentPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 5
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19HOPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19HOPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19OverflowPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19OverflowPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19OFMechVentPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19OFMechVentPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19Died"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 1
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numc19confnewadm"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 1
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numc19suspnewadm"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 8
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numc19honewpats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19HONewPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numc19prevdied"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 2
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19PrevDied"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 2
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19ICUPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 5
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19ICUPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 5
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "resource" : {
+        "resourceType" : "MeasureReport",
+        "meta" : {
+          "profile" : [
+            "http://hl7.org/fhir/us/saner/StructureDefinition/PublicHealthMeasureReport"
+          ]
+        },
+        "text" : {
+          "status" : "generated",
+          "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated from CSV record(s):</b></p><pre>collectionDate,numTotBeds,numbeds,numBedsOcc,numICUBeds,numNICUBeds,numICUBedsOcc,numNICUBedsOcc,numVent,numVentUse,numC19HospPats,numConfC19HospPats,numC19MechVentPats,numConfC19MechVentPats,numC19HOPats,numConfC19HOPats,numC19OverflowPats,numConfC19OverflowPats,numC19OFMechVentPats,numConfC19OFMechVentPats,numC19Died ,numc19confnewadm,numc19suspnewadm,numc19honewpats,numConfC19HONewPats,numc19prevdied ,numConfC19PrevDied,numC19ICUPats,numConfC19ICUPats\n5/30/2020,150,125,100,20,4,15,1,40,15,25,5,5,5,0,0,0,0,0,0,1,1,8,0,0,2,2,5,5\n</pre><table><tr><th>collectionDate</th><th>numTotBeds</th><th>numbeds</th><th>numBedsOcc</th><th>numICUBeds</th><th>numNICUBeds</th><th>numICUBedsOcc</th><th>numNICUBedsOcc</th><th>numVent</th><th>numVentUse</th><th>numC19HospPats</th><th>numConfC19HospPats</th><th>numC19MechVentPats</th><th>numConfC19MechVentPats</th><th>numC19HOPats</th><th>numConfC19HOPats</th><th>numC19OverflowPats</th><th>numConfC19OverflowPats</th><th>numC19OFMechVentPats</th><th>numConfC19OFMechVentPats</th><th>numC19Died </th><th>numc19confnewadm</th><th>numc19suspnewadm</th><th>numc19honewpats</th><th>numConfC19HONewPats</th><th>numc19prevdied </th><th>numConfC19PrevDied</th><th>numC19ICUPats</th><th>numConfC19ICUPats</th></tr><tr><td>5/30/2020</td><td>150</td><td>125</td><td>100</td><td>20</td><td>4</td><td>15</td><td>1</td><td>40</td><td>15</td><td>25</td><td>5</td><td>5</td><td>5</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td><td>8</td><td>0</td><td>0</td><td>2</td><td>2</td><td>5</td><td>5</td></tr></table></div>"
+        },
+        "status" : "complete",
+        "type" : "summary",
+        "measure" : "http://hl7.org/fhir/us/saner/Measure/CDCPatientImpactAndHospitalCapacity",
+        "subject" : {
+          "reference" : "Location/states-NJ",
+          "identifier" : {
+            "system" : "https://www.census.gov/geographies",
+            "value" : "34"
+          },
+          "display" : "State of New Jersey"
+        },
+        "date" : "2020-05-30",
+        "reporter" : {
+          "reference" : "Organization/NJ-DPH",
+          "display" : "New Jersey Department of Public Health"
+        },
+        "period" : {
+          "start" : "2020-05-30",
+          "end" : "2020-05-30"
+        },
+        "group" : [
+          {
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+                  "code" : "Beds"
+                }
+              ]
+            },
+            "population" : [
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numTotBeds"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "initial-population"
+                    }
+                  ]
+                },
+                "count" : 150
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numbeds"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 125
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numBedsOcc"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 100
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numICUBeds"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 20
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numNICUBeds"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 4
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numICUBedsOcc"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 15
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numNICUBedsOcc"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 1
+              }
+            ]
+          },
+          {
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+                  "code" : "Ventilators"
+                }
+              ]
+            },
+            "population" : [
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numVent"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "initial-population"
+                    }
+                  ]
+                },
+                "count" : 40
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numVentUse"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 15
+              }
+            ]
+          },
+          {
+            "code" : {
+              "coding" : [
+                {
+                  "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasureGroupSystem",
+                  "code" : "Encounters"
+                }
+              ]
+            },
+            "population" : [
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19HospPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 25
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19HospPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 5
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19MechVentPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 5
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19MechVentPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 5
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19HOPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19HOPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19OverflowPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19OverflowPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19OFMechVentPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19OFMechVentPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19Died"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 1
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numc19confnewadm"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 1
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numc19suspnewadm"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 8
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numc19honewpats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19HONewPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 0
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numc19prevdied"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 2
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19PrevDied"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 2
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numC19ICUPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 5
+              },
+              {
+                "code" : {
+                  "coding" : [
+                    {
+                      "system" : "http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem",
+                      "code" : "numConfC19ICUPats"
+                    },
+                    {
+                      "system" : "http://terminology.hl7.org/CodeSystem/measure-population",
+                      "code" : "measure-population"
+                    }
+                  ]
+                },
+                "count" : 5
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
