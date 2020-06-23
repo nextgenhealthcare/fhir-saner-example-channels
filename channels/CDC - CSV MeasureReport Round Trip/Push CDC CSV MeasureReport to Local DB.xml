@@ -5,10 +5,6 @@
   <description>Converts the CDC Measures CSV to a MeasureReport resource then stores it to the local FHIR DB
 
 Input Example:
-collectiondate,numTotBeds,numbeds,numBedsOcc,numICUBeds,numICUBedsOcc,numVent,numVentUse,numC19HospPats,numC19MechVentPats,numC19HOPats,numC19OverflowPats,numC19OFMechVentPats,numC19Died
-3/9/2020,200,100,50,100,25,50,35,50,20,5,3,2,8
-
-New Input Example:
 collectionDate,numTotBeds,numbeds,numBedsOcc,numICUBeds,numNICUBeds,numICUBedsOcc,numNICUBedsOcc,numVent,numVentUse,numC19HospPats,numConfC19HospPats,numC19MechVentPats,numConfC19MechVentPats,numC19HOPats,numConfC19HOPats,numC19OverflowPats,numConfC19OverflowPats,numC19OFMechVentPats,numConfC19OFMechVentPats,numC19Died ,numc19confnewadm,numc19suspnewadm,numc19honewpats,numConfC19HONewPats,numc19prevdied ,numConfC19PrevDied,numC19ICUPats,numConfC19ICUPats
 5/28/2020,150,125,100,20,4,15,1,40,15,25,5,5,5,0,0,0,0,0,0,1,1,8,0,0,2,2,5,5</description>
   <revision>3</revision>
