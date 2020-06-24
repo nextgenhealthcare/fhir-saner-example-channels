@@ -1,9 +1,9 @@
 <codeTemplateLibrary version="3.9.0">
   <id>4b08338c-c4fd-4ff4-adcd-326fb0892fb3</id>
   <name>FHIR SANER Helper Functions</name>
-  <revision>12</revision>
+  <revision>5</revision>
   <lastModified>
-    <time>1590085991879</time>
+    <time>1592856056117</time>
     <timezone>UTC</timezone>
   </lastModified>
   <description>SANER specific Helper functions</description>
@@ -21,7 +21,6 @@
     <string>f6710348-d553-4c88-ab71-41a88e929e4d</string>
   </enabledChannelIds>
   <disabledChannelIds>
-    <string>1892f241-d643-4abb-b0af-b20b87e0cf12</string>
     <string>6ee5452f-792a-4f77-aada-4bca1de14b07</string>
     <string>32e8a925-b0de-440d-9d5c-77265106de8f</string>
     <string>98d6e634-66b1-45ca-b5c6-a9d1a7b82c1a</string>
@@ -38,23 +37,24 @@
     <string>96ed09ab-0af2-4414-85e0-61629d76085b</string>
     <string>f2075620-e011-4280-bbd2-33986a15313a</string>
     <string>f06b628e-0b68-4cb3-9eea-cb7788d0a8ef</string>
+    <string>a25c03d6-3b28-495b-a3ed-0015c923e19f</string>
   </disabledChannelIds>
   <codeTemplates>
     <codeTemplate version="3.9.0">
       <id>132d0f83-1744-4f7c-b0dd-1802dce979b7</id>
       <name>Create Bundle from list of Bundle_Entry resources</name>
-      <revision>4</revision>
+      <revision>1</revision>
       <lastModified>
-        <time>1589927068802</time>
+        <time>1592591218684</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.plugins.fhir.shared.FhirModelBuilderCodeTemplateProperties" version="3.9.0">
@@ -110,18 +110,18 @@
     <codeTemplate version="3.9.0">
       <id>718fa75e-393c-4af4-a227-1051d58608c2</id>
       <name>Create Bundle_Entry with FHIR Resource</name>
-      <revision>2</revision>
+      <revision>1</revision>
       <lastModified>
-        <time>1589836313813</time>
+        <time>1592591218940</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.plugins.fhir.shared.FhirModelBuilderCodeTemplateProperties" version="3.9.0">
@@ -157,18 +157,18 @@
     <codeTemplate version="3.9.0">
       <id>3c0c304b-ca04-4437-a69a-6b489d8ba399</id>
       <name>Create MeasureReport from CDC CSV row</name>
-      <revision>2</revision>
+      <revision>1</revision>
       <lastModified>
-        <time>1589843014287</time>
+        <time>1592609903334</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.plugins.fhir.shared.FhirModelBuilderCodeTemplateProperties" version="3.9.0">
@@ -295,7 +295,7 @@
               <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
                 <enabled>true</enabled>
                 <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
-                  <stringValue>convertDate(csvRow[&apos;collectiondate&apos;].toString(), &apos;yyyy-MM-dd&apos;)</stringValue>
+                  <stringValue>convertDate(csvRow[&apos;collectionDate&apos;].toString(), &apos;yyyy-MM-dd&apos;)</stringValue>
                   <scriptExpression>true</scriptExpression>
                 </properties>
               </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
@@ -321,7 +321,7 @@
                       <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
                         <enabled>true</enabled>
                         <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
-                          <stringValue>convertDate(csvRow[&apos;collectiondate&apos;].toString(), &apos;yyyy-MM-dd&apos;)</stringValue>
+                          <stringValue>convertDate(csvRow[&apos;collectionDate&apos;].toString(), &apos;yyyy-MM-dd&apos;)</stringValue>
                           <scriptExpression>true</scriptExpression>
                         </properties>
                       </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
@@ -331,7 +331,7 @@
                       <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
                         <enabled>true</enabled>
                         <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
-                          <stringValue>convertDate(csvRow[&apos;collectiondate&apos;].toString(), &apos;yyyy-MM-dd&apos;)</stringValue>
+                          <stringValue>convertDate(csvRow[&apos;collectionDate&apos;].toString(), &apos;yyyy-MM-dd&apos;)</stringValue>
                           <scriptExpression>true</scriptExpression>
                         </properties>
                       </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
@@ -518,7 +518,7 @@
                                                           <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
                                                             <enabled>true</enabled>
                                                             <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
-                                                              <stringValue>numBeds</stringValue>
+                                                              <stringValue>numbeds</stringValue>
                                                             </properties>
                                                           </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
                                                         </entry>
@@ -764,6 +764,88 @@
                                                           <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
                                                             <enabled>true</enabled>
                                                             <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>numNICUBeds</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://terminology.hl7.org/CodeSystem/measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                  </elements>
+                                                </properties>
+                                              </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                            </entry>
+                                          </properties>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                    <entry>
+                                      <string>count</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
+                                          <stringValue>parseInt(csvRow[&apos;numNICUBeds&apos;].toString())</stringValue>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                  </properties>
+                                </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                  <usingBuilder>true</usingBuilder>
+                                  <properties class="linked-hash-map">
+                                    <entry>
+                                      <string>code</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.ObjectModel">
+                                          <usingBuilder>true</usingBuilder>
+                                          <properties class="linked-hash-map">
+                                            <entry>
+                                              <string>coding</string>
+                                              <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                <enabled>true</enabled>
+                                                <properties class="com.mirth.connect.jsonbuilder.shared.models.ArrayModel">
+                                                  <usingBuilder>true</usingBuilder>
+                                                  <elements>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
                                                               <stringValue>numICUBedsOcc</stringValue>
                                                             </properties>
                                                           </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
@@ -807,6 +889,88 @@
                                         <enabled>true</enabled>
                                         <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
                                           <stringValue>parseInt(csvRow[&apos;numICUBedsOcc&apos;].toString())</stringValue>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                  </properties>
+                                </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                  <usingBuilder>true</usingBuilder>
+                                  <properties class="linked-hash-map">
+                                    <entry>
+                                      <string>code</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.ObjectModel">
+                                          <usingBuilder>true</usingBuilder>
+                                          <properties class="linked-hash-map">
+                                            <entry>
+                                              <string>coding</string>
+                                              <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                <enabled>true</enabled>
+                                                <properties class="com.mirth.connect.jsonbuilder.shared.models.ArrayModel">
+                                                  <usingBuilder>true</usingBuilder>
+                                                  <elements>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>numNICUBedsOcc</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://terminology.hl7.org/CodeSystem/measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                  </elements>
+                                                </properties>
+                                              </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                            </entry>
+                                          </properties>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                    <entry>
+                                      <string>count</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
+                                          <stringValue>parseInt(csvRow[&apos;numNICUBedsOcc&apos;].toString())</stringValue>
                                         </properties>
                                       </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
                                     </entry>
@@ -1214,6 +1378,88 @@
                                                           <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
                                                             <enabled>true</enabled>
                                                             <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>numConfC19HospPats</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://terminology.hl7.org/CodeSystem/measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                  </elements>
+                                                </properties>
+                                              </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                            </entry>
+                                          </properties>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                    <entry>
+                                      <string>count</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
+                                          <stringValue>parseInt(csvRow[&apos;numConfC19HospPats&apos;].toString())</stringValue>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                  </properties>
+                                </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                  <usingBuilder>true</usingBuilder>
+                                  <properties class="linked-hash-map">
+                                    <entry>
+                                      <string>code</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.ObjectModel">
+                                          <usingBuilder>true</usingBuilder>
+                                          <properties class="linked-hash-map">
+                                            <entry>
+                                              <string>coding</string>
+                                              <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                <enabled>true</enabled>
+                                                <properties class="com.mirth.connect.jsonbuilder.shared.models.ArrayModel">
+                                                  <usingBuilder>true</usingBuilder>
+                                                  <elements>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
                                                               <stringValue>numC19MechVentPats</stringValue>
                                                             </properties>
                                                           </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
@@ -1257,6 +1503,88 @@
                                         <enabled>true</enabled>
                                         <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
                                           <stringValue>parseInt(csvRow[&apos;numC19MechVentPats&apos;].toString())</stringValue>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                  </properties>
+                                </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                  <usingBuilder>true</usingBuilder>
+                                  <properties class="linked-hash-map">
+                                    <entry>
+                                      <string>code</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.ObjectModel">
+                                          <usingBuilder>true</usingBuilder>
+                                          <properties class="linked-hash-map">
+                                            <entry>
+                                              <string>coding</string>
+                                              <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                <enabled>true</enabled>
+                                                <properties class="com.mirth.connect.jsonbuilder.shared.models.ArrayModel">
+                                                  <usingBuilder>true</usingBuilder>
+                                                  <elements>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>numConfC19MechVentPats</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://terminology.hl7.org/CodeSystem/measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                  </elements>
+                                                </properties>
+                                              </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                            </entry>
+                                          </properties>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                    <entry>
+                                      <string>count</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
+                                          <stringValue>parseInt(csvRow[&apos;numConfC19MechVentPats&apos;].toString())</stringValue>
                                         </properties>
                                       </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
                                     </entry>
@@ -1378,6 +1706,88 @@
                                                           <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
                                                             <enabled>true</enabled>
                                                             <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>numConfC19HOPats</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://terminology.hl7.org/CodeSystem/measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                  </elements>
+                                                </properties>
+                                              </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                            </entry>
+                                          </properties>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                    <entry>
+                                      <string>count</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
+                                          <stringValue>parseInt(csvRow[&apos;numConfC19HOPats&apos;].toString())</stringValue>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                  </properties>
+                                </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                  <usingBuilder>true</usingBuilder>
+                                  <properties class="linked-hash-map">
+                                    <entry>
+                                      <string>code</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.ObjectModel">
+                                          <usingBuilder>true</usingBuilder>
+                                          <properties class="linked-hash-map">
+                                            <entry>
+                                              <string>coding</string>
+                                              <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                <enabled>true</enabled>
+                                                <properties class="com.mirth.connect.jsonbuilder.shared.models.ArrayModel">
+                                                  <usingBuilder>true</usingBuilder>
+                                                  <elements>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
                                                               <stringValue>numC19OverflowPats</stringValue>
                                                             </properties>
                                                           </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
@@ -1421,6 +1831,88 @@
                                         <enabled>true</enabled>
                                         <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
                                           <stringValue>parseInt(csvRow[&apos;numC19OverflowPats&apos;].toString())</stringValue>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                  </properties>
+                                </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                  <usingBuilder>true</usingBuilder>
+                                  <properties class="linked-hash-map">
+                                    <entry>
+                                      <string>code</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.ObjectModel">
+                                          <usingBuilder>true</usingBuilder>
+                                          <properties class="linked-hash-map">
+                                            <entry>
+                                              <string>coding</string>
+                                              <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                <enabled>true</enabled>
+                                                <properties class="com.mirth.connect.jsonbuilder.shared.models.ArrayModel">
+                                                  <usingBuilder>true</usingBuilder>
+                                                  <elements>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>numConfC19OverflowPats</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://terminology.hl7.org/CodeSystem/measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                  </elements>
+                                                </properties>
+                                              </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                            </entry>
+                                          </properties>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                    <entry>
+                                      <string>count</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
+                                          <stringValue>parseInt(csvRow[&apos;numConfC19OverflowPats&apos;].toString())</stringValue>
                                         </properties>
                                       </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
                                     </entry>
@@ -1542,6 +2034,88 @@
                                                           <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
                                                             <enabled>true</enabled>
                                                             <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>numConfC19OFMechVentPats</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://terminology.hl7.org/CodeSystem/measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                  </elements>
+                                                </properties>
+                                              </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                            </entry>
+                                          </properties>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                    <entry>
+                                      <string>count</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
+                                          <stringValue>parseInt(csvRow[&apos;numConfC19OFMechVentPats&apos;].toString())</stringValue>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                  </properties>
+                                </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                  <usingBuilder>true</usingBuilder>
+                                  <properties class="linked-hash-map">
+                                    <entry>
+                                      <string>code</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.ObjectModel">
+                                          <usingBuilder>true</usingBuilder>
+                                          <properties class="linked-hash-map">
+                                            <entry>
+                                              <string>coding</string>
+                                              <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                <enabled>true</enabled>
+                                                <properties class="com.mirth.connect.jsonbuilder.shared.models.ArrayModel">
+                                                  <usingBuilder>true</usingBuilder>
+                                                  <elements>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
                                                               <stringValue>numC19Died</stringValue>
                                                             </properties>
                                                           </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
@@ -1590,6 +2164,662 @@
                                     </entry>
                                   </properties>
                                 </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                  <usingBuilder>true</usingBuilder>
+                                  <properties class="linked-hash-map">
+                                    <entry>
+                                      <string>code</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.ObjectModel">
+                                          <usingBuilder>true</usingBuilder>
+                                          <properties class="linked-hash-map">
+                                            <entry>
+                                              <string>coding</string>
+                                              <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                <enabled>true</enabled>
+                                                <properties class="com.mirth.connect.jsonbuilder.shared.models.ArrayModel">
+                                                  <usingBuilder>true</usingBuilder>
+                                                  <elements>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>numc19confnewadm</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://terminology.hl7.org/CodeSystem/measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                  </elements>
+                                                </properties>
+                                              </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                            </entry>
+                                          </properties>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                    <entry>
+                                      <string>count</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
+                                          <stringValue>parseInt(csvRow[&apos;numc19confnewadm&apos;].toString())</stringValue>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                  </properties>
+                                </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                  <usingBuilder>true</usingBuilder>
+                                  <properties class="linked-hash-map">
+                                    <entry>
+                                      <string>code</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.ObjectModel">
+                                          <usingBuilder>true</usingBuilder>
+                                          <properties class="linked-hash-map">
+                                            <entry>
+                                              <string>coding</string>
+                                              <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                <enabled>true</enabled>
+                                                <properties class="com.mirth.connect.jsonbuilder.shared.models.ArrayModel">
+                                                  <usingBuilder>true</usingBuilder>
+                                                  <elements>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>numc19suspnewadm</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://terminology.hl7.org/CodeSystem/measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                  </elements>
+                                                </properties>
+                                              </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                            </entry>
+                                          </properties>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                    <entry>
+                                      <string>count</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
+                                          <stringValue>parseInt(csvRow[&apos;numc19suspnewadm&apos;].toString())</stringValue>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                  </properties>
+                                </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                  <usingBuilder>true</usingBuilder>
+                                  <properties class="linked-hash-map">
+                                    <entry>
+                                      <string>code</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.ObjectModel">
+                                          <usingBuilder>true</usingBuilder>
+                                          <properties class="linked-hash-map">
+                                            <entry>
+                                              <string>coding</string>
+                                              <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                <enabled>true</enabled>
+                                                <properties class="com.mirth.connect.jsonbuilder.shared.models.ArrayModel">
+                                                  <usingBuilder>true</usingBuilder>
+                                                  <elements>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>numc19honewpats</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://terminology.hl7.org/CodeSystem/measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                  </elements>
+                                                </properties>
+                                              </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                            </entry>
+                                          </properties>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                    <entry>
+                                      <string>count</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
+                                          <stringValue>parseInt(csvRow[&apos;numc19honewpats&apos;].toString())</stringValue>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                  </properties>
+                                </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                  <usingBuilder>true</usingBuilder>
+                                  <properties class="linked-hash-map">
+                                    <entry>
+                                      <string>code</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.ObjectModel">
+                                          <usingBuilder>true</usingBuilder>
+                                          <properties class="linked-hash-map">
+                                            <entry>
+                                              <string>coding</string>
+                                              <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                <enabled>true</enabled>
+                                                <properties class="com.mirth.connect.jsonbuilder.shared.models.ArrayModel">
+                                                  <usingBuilder>true</usingBuilder>
+                                                  <elements>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>numConfC19HONewPats</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://terminology.hl7.org/CodeSystem/measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                  </elements>
+                                                </properties>
+                                              </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                            </entry>
+                                          </properties>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                    <entry>
+                                      <string>count</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
+                                          <stringValue>parseInt(csvRow[&apos;numConfC19HONewPats&apos;].toString())</stringValue>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                  </properties>
+                                </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                  <usingBuilder>true</usingBuilder>
+                                  <properties class="linked-hash-map">
+                                    <entry>
+                                      <string>code</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.ObjectModel">
+                                          <usingBuilder>true</usingBuilder>
+                                          <properties class="linked-hash-map">
+                                            <entry>
+                                              <string>coding</string>
+                                              <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                <enabled>true</enabled>
+                                                <properties class="com.mirth.connect.jsonbuilder.shared.models.ArrayModel">
+                                                  <usingBuilder>true</usingBuilder>
+                                                  <elements>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>numc19prevdied</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://terminology.hl7.org/CodeSystem/measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                  </elements>
+                                                </properties>
+                                              </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                            </entry>
+                                          </properties>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                    <entry>
+                                      <string>count</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
+                                          <stringValue>parseInt(csvRow[&apos;numc19prevdied&apos;].toString())</stringValue>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                  </properties>
+                                </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                  <usingBuilder>true</usingBuilder>
+                                  <properties class="linked-hash-map">
+                                    <entry>
+                                      <string>code</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.ObjectModel">
+                                          <usingBuilder>true</usingBuilder>
+                                          <properties class="linked-hash-map">
+                                            <entry>
+                                              <string>coding</string>
+                                              <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                <enabled>true</enabled>
+                                                <properties class="com.mirth.connect.jsonbuilder.shared.models.ArrayModel">
+                                                  <usingBuilder>true</usingBuilder>
+                                                  <elements>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>numConfC19PrevDied</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://terminology.hl7.org/CodeSystem/measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                  </elements>
+                                                </properties>
+                                              </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                            </entry>
+                                          </properties>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                    <entry>
+                                      <string>count</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
+                                          <stringValue>parseInt(csvRow[&apos;numConfC19PrevDied&apos;].toString())</stringValue>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                  </properties>
+                                </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                  <usingBuilder>true</usingBuilder>
+                                  <properties class="linked-hash-map">
+                                    <entry>
+                                      <string>code</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.ObjectModel">
+                                          <usingBuilder>true</usingBuilder>
+                                          <properties class="linked-hash-map">
+                                            <entry>
+                                              <string>coding</string>
+                                              <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                <enabled>true</enabled>
+                                                <properties class="com.mirth.connect.jsonbuilder.shared.models.ArrayModel">
+                                                  <usingBuilder>true</usingBuilder>
+                                                  <elements>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>numC19ICUPats</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://terminology.hl7.org/CodeSystem/measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                  </elements>
+                                                </properties>
+                                              </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                            </entry>
+                                          </properties>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                    <entry>
+                                      <string>count</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
+                                          <stringValue>parseInt(csvRow[&apos;numC19ICUPats&apos;].toString())</stringValue>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                  </properties>
+                                </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                  <usingBuilder>true</usingBuilder>
+                                  <properties class="linked-hash-map">
+                                    <entry>
+                                      <string>code</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.ObjectModel">
+                                          <usingBuilder>true</usingBuilder>
+                                          <properties class="linked-hash-map">
+                                            <entry>
+                                              <string>coding</string>
+                                              <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                <enabled>true</enabled>
+                                                <properties class="com.mirth.connect.jsonbuilder.shared.models.ArrayModel">
+                                                  <usingBuilder>true</usingBuilder>
+                                                  <elements>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://hl7.org/fhir/us/saner/CodeSystem/MeasurePopulationSystem</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>numConfC19ICUPats</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                    <com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                      <usingBuilder>true</usingBuilder>
+                                                      <properties class="linked-hash-map">
+                                                        <entry>
+                                                          <string>system</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>http://terminology.hl7.org/CodeSystem/measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                        <entry>
+                                                          <string>code</string>
+                                                          <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                            <enabled>true</enabled>
+                                                            <properties class="com.mirth.connect.jsonbuilder.shared.models.StringModel">
+                                                              <stringValue>measure-population</stringValue>
+                                                            </properties>
+                                                          </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                                        </entry>
+                                                      </properties>
+                                                    </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
+                                                  </elements>
+                                                </properties>
+                                              </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                            </entry>
+                                          </properties>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                    <entry>
+                                      <string>count</string>
+                                      <com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                        <enabled>true</enabled>
+                                        <properties class="com.mirth.connect.jsonbuilder.shared.models.NumberModel">
+                                          <stringValue>parseInt(csvRow[&apos;numConfC19ICUPats&apos;].toString())</stringValue>
+                                        </properties>
+                                      </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
+                                    </entry>
+                                  </properties>
+                                </com.mirth.connect.jsonbuilder.shared.models.ObjectModel>
                               </elements>
                             </properties>
                           </com.mirth.connect.jsonbuilder.shared.models.ObjectProperty>
@@ -1608,18 +2838,18 @@
     <codeTemplate version="3.9.0">
       <id>bcf81f3d-48e8-48f4-a5b3-6a16a44bb1ef</id>
       <name>Create MeasureReport from FEMA CSV row</name>
-      <revision>3</revision>
+      <revision>1</revision>
       <lastModified>
-        <time>1589843057531</time>
+        <time>1592591218840</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.plugins.fhir.shared.FhirModelBuilderCodeTemplateProperties" version="3.9.0">
@@ -2507,18 +3737,18 @@
     <codeTemplate version="3.9.0">
       <id>99949893-1064-4b77-b350-147cb54e32bc</id>
       <name>Create Table From CSV row</name>
-      <revision>4</revision>
+      <revision>1</revision>
       <lastModified>
-        <time>1589841161773</time>
+        <time>1592591218704</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -2562,16 +3792,16 @@ function createTableFromCsvRow(csvRow, headerRows) {
       <name>Get SANER measure group code</name>
       <revision>1</revision>
       <lastModified>
-        <time>1589928230560</time>
+        <time>1592591218872</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -2601,16 +3831,16 @@ function getGroupCode(group) {
       <name>Get SANER population code</name>
       <revision>1</revision>
       <lastModified>
-        <time>1589928748129</time>
+        <time>1592591218892</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -2640,16 +3870,16 @@ function getPopulationCode(population) {
       <name>Get value or empty</name>
       <revision>1</revision>
       <lastModified>
-        <time>1589928451364</time>
+        <time>1592591218753</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -2671,18 +3901,18 @@ function getValueOrEmpty(value) {
     <codeTemplate version="3.9.0">
       <id>a0dfc813-57f9-4654-b92b-7547263cf769</id>
       <name>MeasureReport to CDC CSV</name>
-      <revision>25</revision>
+      <revision>4</revision>
       <lastModified>
-        <time>1589929248990</time>
+        <time>1592612054634</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -2694,7 +3924,10 @@ function getValueOrEmpty(value) {
 	@return {Object} return new Row
 */
 function cdcMeasureReportToCSV(measureReport) {
-	var columns = [&quot;collectiondate&quot;,&quot;numTotBeds&quot;,&quot;numbeds&quot;,&quot;numBedsOcc&quot;,&quot;numICUBeds&quot;,&quot;numICUBedsOcc&quot;,&quot;numVent&quot;,&quot;numVentUse&quot;,&quot;numC19HospPats&quot;,&quot;numC19MechVentPats&quot;,&quot;numC19HOPats&quot;,&quot;numC19OverflowPats&quot;,&quot;numC19OFMechVentPats&quot;,&quot;numC19Died&quot;];
+	var columns = [&quot;collectionDate&quot;,&quot;numTotBeds&quot;,&quot;numbeds&quot;,&quot;numBedsOcc&quot;,&quot;numICUBeds&quot;,&quot;numNICUBeds&quot;,&quot;numICUBedsOcc&quot;,&quot;numNICUBedsOcc&quot;,&quot;numVent&quot;,&quot;numVentUse&quot;,&quot;numC19HospPats&quot;,
+	&quot;numConfC19HospPats&quot;,&quot;numC19MechVentPats&quot;,&quot;numConfC19MechVentPats&quot;,&quot;numC19HOPats&quot;,&quot;numConfC19HOPats&quot;,&quot;numC19OverflowPats&quot;,&quot;numConfC19OverflowPats&quot;,&quot;numC19OFMechVentPats&quot;,
+	&quot;numConfC19OFMechVentPats&quot;,&quot;numC19Died&quot;,&quot;numc19confnewadm&quot;,&quot;numc19suspnewadm&quot;,&quot;numc19honewpats&quot;,&quot;numConfC19HONewPats&quot;,&quot;numc19prevdied&quot;,&quot;numConfC19PrevDied&quot;,&quot;numC19ICUPats&quot;,
+	&quot;numConfC19ICUPats&quot;];
 
 	// generate a new empty row
 	var row = &lt;row/&gt;;
@@ -2714,7 +3947,7 @@ function cdcMeasureReportToCSV(measureReport) {
 		}
 	}
 	if (measureReport[&apos;period&apos;] != null &amp;&amp; measureReport[&apos;period&apos;][&apos;end&apos;] != null) {
-		row[&apos;collectiondate&apos;] = convertDate(measureReport[&apos;period&apos;][&apos;end&apos;], &apos;MM/dd/yyyy&apos;);
+		row[&apos;collectionDate&apos;] = convertDate(measureReport[&apos;period&apos;][&apos;end&apos;], &apos;MM/dd/yyyy&apos;);
 	}
 	return row;
 }
@@ -2726,14 +3959,18 @@ function mapBedsMeasures(group, row) {
 			var measureCode = getPopulationCode(population);
 			if (measureCode === &apos;numTotBeds&apos;) {
 				row[&apos;numTotBeds&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
-			} else if (measureCode === &apos;numBeds&apos;) {
+			} else if (measureCode === &apos;numbeds&apos;) {
 				row[&apos;numbeds&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
 			} else if (measureCode === &apos;numBedsOcc&apos;) {
 				row[&apos;numBedsOcc&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
 			} else if (measureCode === &apos;numICUBeds&apos;) {
 				row[&apos;numICUBeds&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
+			} else if (measureCode === &apos;numNICUBeds&apos;) {
+				row[&apos;numNICUBeds&apos;] = getValueOrEmpty(population[&apos;count&apos;])
 			} else if (measureCode === &apos;numICUBedsOcc&apos;) {
 				row[&apos;numICUBedsOcc&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
+			} else if (measureCode === &apos;numNICUBedsOcc&apos;) {
+				row[&apos;numNICUBedsOcc&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
 			}
 		}
 	}
@@ -2760,16 +3997,42 @@ function mapEncountersMeasures(group, row) {
 			var measureCode = getPopulationCode(population);
 			if (measureCode === &apos;numC19HospPats&apos;) {
 				row[&apos;numC19HospPats&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
+			} else if (measureCode === &apos;numConfC19HospPats&apos;) {
+				row[&apos;numConfC19HospPats&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
 			} else if (measureCode === &apos;numC19MechVentPats&apos;) {
 				row[&apos;numC19MechVentPats&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
+			} else if (measureCode === &apos;numConfC19MechVentPats&apos;) {
+				row[&apos;numConfC19MechVentPats&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
 			} else if (measureCode === &apos;numC19HOPats&apos;) {
 				row[&apos;numC19HOPats&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
+			} else if (measureCode === &apos;numConfC19HOPats&apos;) {
+				row[&apos;numConfC19HOPats&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
 			} else if (measureCode === &apos;numC19OverflowPats&apos;) {
 				row[&apos;numC19OverflowPats&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
+			} else if (measureCode === &apos;numConfC19OverflowPats&apos;) {
+				row[&apos;numConfC19OverflowPats&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
 			} else if (measureCode === &apos;numC19OFMechVentPats&apos;) {
 				row[&apos;numC19OFMechVentPats&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
+			} else if (measureCode === &apos;numConfC19OFMechVentPats&apos;) {
+				row[&apos;numConfC19OFMechVentPats&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
 			} else if (measureCode === &apos;numC19Died&apos;) {
 				row[&apos;numC19Died&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
+			} else if (measureCode === &apos;numc19confnewadm&apos;) {
+				row[&apos;numc19confnewadm&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
+			} else if (measureCode === &apos;numc19suspnewadm&apos;) {
+				row[&apos;numc19suspnewadm&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
+			} else if (measureCode === &apos;numc19honewpats&apos;) {
+				row[&apos;numc19honewpats&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
+			} else if (measureCode === &apos;numConfC19HONewPats&apos;) {
+				row[&apos;numConfC19HONewPats&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
+			} else if (measureCode === &apos;numc19prevdied&apos;) {
+				row[&apos;numc19prevdied&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
+			} else if (measureCode === &apos;numConfC19PrevDied&apos;) {
+				row[&apos;numConfC19PrevDied&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
+			} else if (measureCode === &apos;numC19ICUPats&apos;) {
+				row[&apos;numC19ICUPats&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
+			} else if (measureCode === &apos;numConfC19ICUPats&apos;) {
+				row[&apos;numConfC19ICUPats&apos;] = getValueOrEmpty(population[&apos;count&apos;]);
 			}
 		}
 	}
@@ -2780,18 +4043,18 @@ function mapEncountersMeasures(group, row) {
     <codeTemplate version="3.9.0">
       <id>eedf8fda-435b-4623-a28c-6baacc763894</id>
       <name>MeasureReport to FEMA CSV</name>
-      <revision>15</revision>
+      <revision>1</revision>
       <lastModified>
-        <time>1589997721205</time>
+        <time>1592591218728</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -2894,18 +4157,18 @@ function mapPositivePercentMeasures(group, row) {
     <codeTemplate version="3.9.0">
       <id>fcd7e2f8-7455-4fa1-81e1-b02e2ed2d6cd</id>
       <name>Replace null counts in MeasureReport</name>
-      <revision>4</revision>
+      <revision>1</revision>
       <lastModified>
-        <time>1589474543518</time>
+        <time>1592591218772</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">

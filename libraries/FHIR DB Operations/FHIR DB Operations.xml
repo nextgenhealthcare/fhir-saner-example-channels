@@ -1,9 +1,9 @@
 <codeTemplateLibrary version="3.9.0">
   <id>1f350e29-158e-4645-8809-9e60d1a47854</id>
   <name>FHIR DB Operations</name>
-  <revision>29</revision>
+  <revision>3</revision>
   <lastModified>
-    <time>1589932486988</time>
+    <time>1592856056113</time>
     <timezone>UTC</timezone>
   </lastModified>
   <description>Functions used by the FHIR Listener channel to communicate with the database.
@@ -11,16 +11,15 @@ PostgreSQL and SQL Server are supported. If you want to support other database
 servers, feel free to add your own database-specific operations and queries.</description>
   <includeNewChannels>false</includeNewChannels>
   <enabledChannelIds>
-    <string>1892f241-d643-4abb-b0af-b20b87e0cf12</string>
     <string>b8d58010-6982-47d8-9253-365ac4fd03d1</string>
     <string>6540dd0b-572f-471b-bfcb-6288a38191ac</string>
     <string>919a4220-394f-48ea-92f8-841afc86ce3e</string>
-    <string>6978b08f-7b35-419c-806c-40ab88352adc</string>
     <string>96ed09ab-0af2-4414-85e0-61629d76085b</string>
     <string>6ee5452f-792a-4f77-aada-4bca1de14b07</string>
     <string>f2075620-e011-4280-bbd2-33986a15313a</string>
     <string>32e8a925-b0de-440d-9d5c-77265106de8f</string>
     <string>23e68077-7c1c-4638-b5b5-9d029cef6163</string>
+    <string>a25c03d6-3b28-495b-a3ed-0015c923e19f</string>
   </enabledChannelIds>
   <disabledChannelIds>
     <string>11b8bb4e-6a05-481c-ad7e-e2026c062daa</string>
@@ -39,6 +38,7 @@ servers, feel free to add your own database-specific operations and queries.</de
     <string>80804528-767e-4972-ac58-ab532e1986bc</string>
     <string>752dbe9d-ba15-422b-8a3e-2bff57ad6a78</string>
     <string>7db1559f-6ca5-464a-954c-6eb8a0e7656c</string>
+    <string>6978b08f-7b35-419c-806c-40ab88352adc</string>
     <string>f06b628e-0b68-4cb3-9eea-cb7788d0a8ef</string>
   </disabledChannelIds>
   <codeTemplates>
@@ -47,18 +47,18 @@ servers, feel free to add your own database-specific operations and queries.</de
       <name>FHIR DB - Execute Cached Query</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247450</time>
+        <time>1592591182071</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>CHANNEL_POSTPROCESSOR</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
           <contextType>CHANNEL_ATTACHMENT</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>CHANNEL_POSTPROCESSOR</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -81,18 +81,18 @@ function executeCachedQuery(expression, parameters, dbConn) {
       <name>FHIR DB - Execute Cached Query and Get Keys</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247713</time>
+        <time>1592591182303</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>CHANNEL_POSTPROCESSOR</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
           <contextType>CHANNEL_ATTACHMENT</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>CHANNEL_POSTPROCESSOR</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -116,18 +116,18 @@ function executeUpdateAndGetGeneratedKeys(expression, parameters, dbConn) {
       <name>FHIR DB - Execute Update</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247170</time>
+        <time>1592591181938</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>CHANNEL_POSTPROCESSOR</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
           <contextType>CHANNEL_ATTACHMENT</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>CHANNEL_POSTPROCESSOR</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -150,18 +150,18 @@ function executeUpdate(expression, parameters, dbConn) {
       <name>FHIR DB - Get Connection</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247254</time>
+        <time>1592591181978</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>CHANNEL_POSTPROCESSOR</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
           <contextType>CHANNEL_ATTACHMENT</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>CHANNEL_POSTPROCESSOR</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -275,16 +275,16 @@ function convertDateParameter(date) {
       <name>Get ResultSet Date</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247581</time>
+        <time>1592591182190</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -313,16 +313,16 @@ function getResultSetDate(resultSet, columnName) {
       <name>Get ResultSet String</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247314</time>
+        <time>1592591182001</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -355,16 +355,16 @@ function getResultSetString(resultSet, columnName) {
       <name>History Utility Methods</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247490</time>
+        <time>1592591182091</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -401,16 +401,16 @@ function getFhirHistorySinceWherePart() {
       <name>Insert Deleted Resource</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247385</time>
+        <time>1592591182055</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -468,16 +468,16 @@ function insertFhirDeletedResource(type, id, versionId, lastUpdated, method, url
       <name>Insert Resource</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247649</time>
+        <time>1592591182235</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -535,18 +535,18 @@ function insertFhirResource(type, id, versionId, lastUpdated, data, contentType,
     <codeTemplate version="3.9.0">
       <id>d1b90f30-f5fb-40c0-a42d-f999717f75fb</id>
       <name>Search _include Utility Methods</name>
-      <revision>13</revision>
+      <revision>1</revision>
       <lastModified>
-        <time>1589301651063</time>
+        <time>1592591182259</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -677,18 +677,18 @@ function getIncludedEntry(result) {
     <codeTemplate version="3.9.0">
       <id>70e7522a-1908-4ef0-aee7-f6e2334bfbd6</id>
       <name>Search Post-SQL Filtering Utility Methods</name>
-      <revision>5</revision>
+      <revision>1</revision>
       <lastModified>
-        <time>1589493466580</time>
+        <time>1592591182115</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -846,18 +846,18 @@ function getGeoLocExt(resource) {
     <codeTemplate version="3.9.0">
       <id>f5c11e82-475f-4a53-a370-273a6027eba0</id>
       <name>Search Utility Methods</name>
-      <revision>2</revision>
+      <revision>1</revision>
       <lastModified>
-        <time>1588881179865</time>
+        <time>1592591181896</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -1020,16 +1020,16 @@ function addLimit(query, limit) {
       <name>Select Resource Instance</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247683</time>
+        <time>1592591182282</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -1060,16 +1060,16 @@ function getResource(type, id) {
       <name>Select Resource Instance by Version</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247115</time>
+        <time>1592591181920</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -1101,16 +1101,16 @@ function getResourceVersion(type, id, versionId) {
       <name>Select Version</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247214</time>
+        <time>1592591181954</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
@@ -1147,16 +1147,16 @@ function getFhirVersion(type, id) {
       <name>Select Version and Deleted ResultSet</name>
       <revision>1</revision>
       <lastModified>
-        <time>1588613247350</time>
+        <time>1592591182021</time>
         <timezone>UTC</timezone>
       </lastModified>
       <contextSet>
         <delegate>
           <contextType>DESTINATION_FILTER_TRANSFORMER</contextType>
-          <contextType>DESTINATION_DISPATCHER</contextType>
-          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
-          <contextType>SOURCE_RECEIVER</contextType>
           <contextType>DESTINATION_RESPONSE_TRANSFORMER</contextType>
+          <contextType>DESTINATION_DISPATCHER</contextType>
+          <contextType>SOURCE_RECEIVER</contextType>
+          <contextType>SOURCE_FILTER_TRANSFORMER</contextType>
         </delegate>
       </contextSet>
       <properties class="com.mirth.connect.model.codetemplates.BasicCodeTemplateProperties">
