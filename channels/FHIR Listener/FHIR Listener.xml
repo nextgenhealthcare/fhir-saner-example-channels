@@ -2875,13 +2875,13 @@ if (interaction == &apos;operation&apos;) {
 
 		try {
 			if (type == &apos;measurereport&apos;) {
-				if (!filtered &amp;&amp; $(&apos;parameters&apos;).contains(&apos;date&apos;) &amp;&amp; isDateFiltered($(&apos;parameters&apos;).getParameter(&apos;date&apos;), entry.getResource().getDate())) {
+				if (!filtered &amp;&amp; $(&apos;parameters&apos;).contains(&apos;date&apos;) &amp;&amp; isDateFiltered($(&apos;parameters&apos;).getParameterList(&apos;date&apos;), entry.getResource().getDate())) {
 					filtered = true;
 				}
-				if (!filtered &amp;&amp; $(&apos;parameters&apos;).contains(&apos;period&apos;) &amp;&amp; isDateFiltered($(&apos;parameters&apos;).getParameter(&apos;period&apos;), entry.getResource().getPeriod().getStart())) {
+				if (!filtered &amp;&amp; $(&apos;parameters&apos;).contains(&apos;period&apos;) &amp;&amp; isDateFiltered($(&apos;parameters&apos;).getParameterList(&apos;period&apos;), entry.getResource().getPeriod().getStart())) {
 					filtered = true;
 				}
-				if (!filtered &amp;&amp; $(&apos;parameters&apos;).contains(&apos;subject:Location.near&apos;) &amp;&amp; isSubjectLocationFiltered(entry.getResource(), $(&apos;parameters&apos;).getParameter(&apos;subject:Location.near&apos;), fhirVersion)) {
+				if (!filtered &amp;&amp; $(&apos;parameters&apos;).contains(&apos;subject:Location.near&apos;) &amp;&amp; isSubjectLocationFiltered(entry.getResource(), $(&apos;parameters&apos;).getParameterList(&apos;subject:Location.near&apos;), fhirVersion)) {
 					filtered = true;
 				}
 			}
@@ -3820,6 +3820,25 @@ function isDateFiltered(dateParameter, resourceDate) {
 	var filtered = false;
 	
 	if (dateParameter) {
+		if (dateParameter instanceof java.util.List) {
+			for (var it = dateParameter.iterator(); it.hasNext();) {
+				if (isDateFilteredSingle(it.next(), resourceDate)) {
+					filtered = true;
+					break;
+				}
+			}
+		} else {
+			filtered = isDateFilteredSingle(dateParameter, resourceDate);
+		}
+	}
+
+	return filtered;
+}
+
+function isDateFilteredSingle(dateParameter, resourceDate) {
+	var filtered = false;
+	
+	if (dateParameter) {
 		dateParameter = new java.lang.String(dateParameter);
 		
 		if (dateParameter.length() &gt; 2) {
@@ -3863,6 +3882,25 @@ function isDateFiltered(dateParameter, resourceDate) {
 }
 
 function isLocationNearFiltered(latitude, longitude, nearParam) {
+	var filtered = false;
+	
+	if (nearParam) {
+		if (nearParam instanceof java.util.List) {
+			for (var it = nearParam.iterator(); it.hasNext();) {
+				if (isLocationNearFilteredSingle(latitude, longitude, it.next())) {
+					filtered = true;
+					break;
+				}
+			}
+		} else {
+			filtered = isLocationNearFilteredSingle(latitude, longitude, nearParam);
+		}
+	}
+
+	return filtered;
+}
+
+function isLocationNearFilteredSingle(latitude, longitude, nearParam) {
 	var nearParamParts = new java.lang.String(nearParam).split(&apos;\\|&apos;);
 	var paramLat = parseFloat(nearParamParts[0]);
 	var paramLong = parseFloat(nearParamParts[1]);
