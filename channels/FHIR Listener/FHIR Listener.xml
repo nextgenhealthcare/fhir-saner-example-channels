@@ -2875,13 +2875,13 @@ if (interaction == &apos;operation&apos;) {
 
 		try {
 			if (type == &apos;measurereport&apos;) {
-				if (!filtered &amp;&amp; $(&apos;parameters&apos;).contains(&apos;date&apos;) &amp;&amp; isDateFiltered($(&apos;parameters&apos;).getParameter(&apos;date&apos;), entry.getResource().getDate())) {
+				if (!filtered &amp;&amp; $(&apos;parameters&apos;).contains(&apos;date&apos;) &amp;&amp; isDateFiltered($(&apos;parameters&apos;).getParameterList(&apos;date&apos;), entry.getResource().getDate())) {
 					filtered = true;
 				}
-				if (!filtered &amp;&amp; $(&apos;parameters&apos;).contains(&apos;period&apos;) &amp;&amp; isDateFiltered($(&apos;parameters&apos;).getParameter(&apos;period&apos;), entry.getResource().getPeriod().getStart())) {
+				if (!filtered &amp;&amp; $(&apos;parameters&apos;).contains(&apos;period&apos;) &amp;&amp; isDateFiltered($(&apos;parameters&apos;).getParameterList(&apos;period&apos;), entry.getResource().getPeriod().getStart())) {
 					filtered = true;
 				}
-				if (!filtered &amp;&amp; $(&apos;parameters&apos;).contains(&apos;subject:Location.near&apos;) &amp;&amp; isSubjectLocationFiltered(entry.getResource(), $(&apos;parameters&apos;).getParameter(&apos;subject:Location.near&apos;), fhirVersion)) {
+				if (!filtered &amp;&amp; $(&apos;parameters&apos;).contains(&apos;subject:Location.near&apos;) &amp;&amp; isSubjectLocationFiltered(entry.getResource(), $(&apos;parameters&apos;).getParameterList(&apos;subject:Location.near&apos;), fhirVersion)) {
 					filtered = true;
 				}
 			}
